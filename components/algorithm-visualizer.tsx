@@ -5,14 +5,16 @@ import { Card } from "@/components/ui/card"
 import type { AlgorithmStep } from "@/lib/simple-des"
 import { ChevronRight, Copy, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 interface AlgorithmVisualizerProps {
   steps: AlgorithmStep[]
   result: string
   isEncrypting: boolean
+  className?: string
 }
 
-export function AlgorithmVisualizer({ steps, result, isEncrypting }: AlgorithmVisualizerProps) {
+export function AlgorithmVisualizer({ steps, result, isEncrypting, className }: AlgorithmVisualizerProps) {
   const [currentStep, setCurrentStep] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
   const [copied, setCopied] = useState(false)
@@ -46,10 +48,10 @@ export function AlgorithmVisualizer({ steps, result, isEncrypting }: AlgorithmVi
 
   if (steps.length === 0) {
     return (
-      <Card className="p-6 flex items-center justify-center min-h-[400px]">
+      <Card className={cn("p-6 flex min-h-[400px] items-center justify-center", className)}>
         <div className="text-center text-muted-foreground">
-          <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center">
-            <ChevronRight className="w-8 h-8" />
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-muted">
+            <ChevronRight className="h-8 w-8" />
           </div>
           <p className="text-lg">{"Enter text and click to see the algorithm in action"}</p>
         </div>
@@ -58,7 +60,7 @@ export function AlgorithmVisualizer({ steps, result, isEncrypting }: AlgorithmVi
   }
 
   return (
-    <Card className="p-6">
+    <Card className={cn("p-6", className)}>
       <div className="space-y-6">
         <div>
           <h2 className="text-2xl font-semibold mb-2">{isEncrypting ? "Encryption" : "Decryption"} Process</h2>

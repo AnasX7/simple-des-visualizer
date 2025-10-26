@@ -10,12 +10,14 @@ import { Textarea } from "@/components/ui/textarea"
 import { Input } from "@/components/ui/input"
 import { simpleDESEncrypt, simpleDESDecrypt, type AlgorithmStep } from "@/lib/simple-des"
 import { Lock, Unlock } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 interface SimpleDESFormProps {
   onProcess: (steps: AlgorithmStep[], result: string, mode: "encrypt" | "decrypt") => void
+  className?: string
 }
 
-export function SimpleDESForm({ onProcess }: SimpleDESFormProps) {
+export function SimpleDESForm({ onProcess, className }: SimpleDESFormProps) {
   const [text, setText] = useState("")
   const [key, setKey] = useState("1010000010")
   const [mode, setMode] = useState<"encrypt" | "decrypt">("encrypt")
@@ -53,7 +55,7 @@ export function SimpleDESForm({ onProcess }: SimpleDESFormProps) {
   }
 
   return (
-    <Card className="p-6">
+    <Card className={cn("p-6", className)}>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Input</h2>
