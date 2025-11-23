@@ -50,9 +50,7 @@ export default function HashVerifyPage() {
 
   // Save files to localStorage whenever they change
   useEffect(() => {
-    if (files.length > 0) {
-      localStorage.setItem('file-system', JSON.stringify(files))
-    }
+    localStorage.setItem('file-system', JSON.stringify(files))
   }, [files])
 
   // Compute hash and check for modifications
