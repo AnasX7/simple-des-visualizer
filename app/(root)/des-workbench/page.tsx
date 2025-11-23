@@ -93,13 +93,13 @@ export default function Home() {
   }
 
   return (
-    <main className='relative min-h-screen px-4 sm:px-8 md:px-14 overflow-hidden bg-background text-foreground'>
+    <main className='relative min-h-screen overflow-hidden bg-background text-foreground'>
       <div className='pointer-events-none absolute inset-0'>
         <div className='absolute inset-x-0 top-[-180px] h-[420px] bg-gradient-to-b from-primary/30 via-background/80 to-background blur-3xl' />
         <div className='absolute right-[-120px] top-1/4 h-80 w-80 rounded-full bg-primary/20 blur-[120px]' />
       </div>
 
-      <div className='relative z-10 container mx-auto space-y-16 px-4 pb-16 pt-12 md:pt-16 lg:pt-20'>
+      <div className='relative z-10 container mx-auto space-y-16 px-4 sm:px-6 lg:px-8 py-12 md:py-16'>
         <section className='space-y-10'>
           <div className='space-y-4 text-balance'>
             <Badge

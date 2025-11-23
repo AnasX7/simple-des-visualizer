@@ -5,6 +5,7 @@ import '../globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 
 import { Navbar } from '@/components/navbar'
+import { Footer } from '@/components/footer'
 
 const _geist = Geist({ subsets: ['latin'] })
 const _geistMono = Geist_Mono({ subsets: ['latin'] })
@@ -33,6 +34,7 @@ export default function RootLayout({
           disableTransitionOnChange>
           <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
         <Analytics />
       </body>

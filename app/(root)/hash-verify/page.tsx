@@ -120,7 +120,7 @@ export default function HashVerifyPage() {
   const selectedFile = files.find((f) => f.id === selectedFileId)
 
   return (
-    <div className='container mx-auto py-10 px-4'>
+    <div className='container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16'>
       <div className='mb-6'>
         <h1 className='text-3xl font-bold mb-2'>File System Simulator</h1>
         <p className='text-muted-foreground'>
